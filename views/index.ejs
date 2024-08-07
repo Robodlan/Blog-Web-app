@@ -1,5 +1,19 @@
-<%- include("header.ejs") %>
+<%- include("partials/header.ejs") %>
 
 <body>
-    <h1>body of header</h1>
+    <form action="/submit" method="POST">
+        <label for="title">Your Title</label>
+        <input type="text" name="title">
+        <label for="blog"></label>
+        <textarea name="blog" id="blog"></textarea>
+        <input type="submit" value="button"/>
+    </form>
+
+    <% let arrBlog = [] %>
+       <% if (locals.titulo, locals.blog) { %> 
+          <h1><%= titulo %></h1>
+          <h3> <%= blog %> </h3>
+          <% } %>
+      
+    
 </body>
