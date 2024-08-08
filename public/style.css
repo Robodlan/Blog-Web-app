@@ -23,7 +23,16 @@ form {
     align-items: center;
 }
 
-input {
-    width: 50%;
-    padding: 0.3em;
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    border: 1px solid aqua;
 }

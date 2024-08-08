@@ -9,22 +9,19 @@ const app  = express();
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 // app.use(bodyParser.json())
-const id = uuidv4()
+// const id = uuidv4()
 
 let data = []
-let random 
+// let random = Math.floor(Math.random() * id.length)
 // const random = id[Math.floor(Math.random() * id.length )]
 app.get("/", (req,res) => {
-    res.render("index.ejs", {blog: data, id: random})
+    res.render("index.ejs", {blog: data})
 })
 
 app.post("/submit", (req, res) => {
       const title = req.body.title
       const bo = req.body.blog
-      random = Math.floor(Math.random() * id.length)
-      console.log(random);
-      
-      data.push({title, blog: bo, random})
+      data.push({title, blog: bo})
     res.redirect("/")
  }
 )
