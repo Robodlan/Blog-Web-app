@@ -12,16 +12,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 const id = uuidv4()
 
 let data = []
+let random 
 // const random = id[Math.floor(Math.random() * id.length )]
 app.get("/", (req,res) => {
-    res.render("index.ejs", {blog: data})
+    res.render("index.ejs", {blog: data, id: random})
 })
 
 app.post("/submit", (req, res) => {
       const title = req.body.title
       const bo = req.body.blog
-
-      data.push({title, blog: bo, id})
+      random = Math.floor(Math.random() * id.length)
+      console.log(random);
+      
+      data.push({title, blog: bo, random})
     res.redirect("/")
  }
 )
