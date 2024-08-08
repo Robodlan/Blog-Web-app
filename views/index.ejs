@@ -1,19 +1,27 @@
 <%- include("partials/header.ejs") %>
 
 <body>
-    <form action="/submit" method="POST">
-        <label for="title">Your Title</label>
-        <input type="text" name="title">
-        <label for="blog"></label>
-        <textarea name="blog" id="blog"></textarea>
-        <input type="submit" value="button"/>
-    </form>
+    <div class="container">
+        <form action="/submit" method="POST">
+            <label for="title">Title</label>
+            <input type="text" name="title">
+            <label for="blog">Blog</label>
+            <textarea name="blog" id="blog"></textarea>
+            <input type="submit" value="button"/>
+        </form>
+    
+      <main>
+       <%   if (locals.blog) { %>
+            <% for(let i=0; i<blog.length; i++) { %>
+              <h2><%= blog[i].title %></h2>
+              <p><%= blog[i].blog %></p>
+            <% } %>
 
-    <% let arrBlog = [] %>
-       <% if (locals.titulo, locals.blog) { %> 
-          <h1><%= titulo %></h1>
-          <h3> <%= blog %> </h3>
-          <% } %>
-      
+        <% }  %>
+         
+      </main>
+                
+           
+    </div>
     
 </body>
